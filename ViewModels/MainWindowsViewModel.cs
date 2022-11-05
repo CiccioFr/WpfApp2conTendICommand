@@ -8,6 +8,9 @@ using WpfApp2conTendICommand.Models;
 
 namespace WpfApp2conTendICommand.ViewModels
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class MainWindowsViewModel : INotifyPropertyChanged
     {
         // controllo per la sorgente dei dati, da passare al costruttore
@@ -34,11 +37,13 @@ namespace WpfApp2conTendICommand.ViewModels
             set
             {
                 _textSaluto = value;
+                /// <summary>
+                /// operatore Elvis ?.  verifica che il riferimento all'oggetto non sia null
+                /// parametro this - riferimento all'oggetto stesso che ha sollevato l'evento
+                /// parametro 2 - i dati aggiuntivi (nel caso il riferimento alla proprietà il cui valore è cambiato) 
+                /// </summary>
                 PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TextSaluto)));
-                // operatore ternario ElvisOperator ?.
-                // verifica che il riferimento all'oggetto non sia null
-                // parametro this - riferimento all'oggetto stesso che ha sollevato l'evento
-                // parametro 2 - i dati aggiuntivi (nel caso il riferimento alla proprietà il cui valore è cambiato)
+
             }
         }
 
