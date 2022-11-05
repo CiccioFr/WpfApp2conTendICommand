@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp2conTendICommand", "WpfApp2conTendICommand.csproj", "{D087E4D1-D32A-47D1-A7C2-6EA671CBA7BA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D087E4D1-D32A-47D1-A7C2-6EA671CBA7BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D087E4D1-D32A-47D1-A7C2-6EA671CBA7BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D087E4D1-D32A-47D1-A7C2-6EA671CBA7BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D087E4D1-D32A-47D1-A7C2-6EA671CBA7BA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {85C9A6FB-2764-4619-AA33-DCB7CC249A61}
+	EndGlobalSection
+EndGlobal

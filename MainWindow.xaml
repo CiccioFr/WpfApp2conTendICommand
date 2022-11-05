@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp2conTendICommand.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2conTendICommand"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel>
+        <Border Background="LightBlue" BorderBrush="Black" BorderThickness="2" Height="Auto" Width="Auto" Margin="3"
+                CornerRadius="25" Padding="15">
+            <StackPanel Orientation="Horizontal" Width="Auto" Height="25" Margin="10">
+                <Label Background="Orange" Content="Testo della Label"/>
+
+                <!-- Etichetta -->
+                <TextBlock x:Name="txtBolckNome" Text="   Nome" x:FieldModifier="private" Padding="1" Width="100" Height="20" Margin="2" Background="AliceBlue"/>
+                <ComboBox x:Name="cmdBoxPersone" x:FieldModifier="private" Width="120" Height="20" Margin="5,0"
+                      ItemsSource="{Binding Path=Persone}" DisplayMemberPath="Cognome" SelectedItem="{Binding Path=PersonaSelezionata}"/>
+                <!--Farà riferimento al DataContent dell'oggetto a cui è riferito,
+            che a sau volta farà riferimento dei contenitori, fino a risalire al DataContent della Windows 
+            SelectedItem="{Binding Path=PersonaSelezionata} lega la selezione di una riga della ComboBox alla Property nella ViewModel-->
+
+                <Button x:Name="ButtonName" Content="Trascrivi" Click="ButtonName_Click" Width="100" Margin="3"/>
+
+            </StackPanel>
+        </Border>
+        <!--Altri attributi dello StackPanel:  HorizontalAlignment="Right"  RenderTransformOrigin="0.5,0.5" -->
+        <StackPanel Orientation="Horizontal" Margin="20,8,8,8" Height="38" Background="Coral">
+
+            <TextBlock x:Name="xtxSaluto" Text="{Binding Path=TextSaluto}" x:FieldModifier="private" 
+                       Margin="10,8,8,8" Padding="1" Width="200" Height="18" Background="AntiqueWhite"/>
+
+        </StackPanel>
+    </StackPanel>
+</Window>
