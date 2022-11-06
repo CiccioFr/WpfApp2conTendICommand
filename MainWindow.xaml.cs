@@ -36,20 +36,22 @@ namespace WpfApp2conTendICommand
             // sarà ereditato da tutto il suo contenuto
         }
 
-        private void ButtonName_Click(object sender, RoutedEventArgs e)
-        {
-            Trascrivi();
-        }
+        // RIMOSSO dopo la modifica del codice XAML relativo (tolto evento click dall'elemento Button)
+        // il tutto ora è gestito direttamente dalla ViewModel
+        //private void ButtonName_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Trascrivi();
+        //}
 
-        private void Trascrivi()
-        {
-            //if (cmdBoxPersone.SelectedItem != null)
-            //{
-            //    Persona persona = (Persona)cmdBoxPersone.SelectedItem;
-            //    // stringa interpolata
-            //    xtxSaluto.Text = $"ciao {persona.Nome} {persona.Cognome}";
-            //}
-            (DataContext as MainWindowsViewModel).Trascrivi();
-        }
+        //private void Trascrivi()
+        //{
+        //    //if (cmdBoxPersone.SelectedItem != null)
+        //    //{
+        //    //    Persona persona = (Persona)cmdBoxPersone.SelectedItem;
+        //    //    // stringa interpolata
+        //    //    xtxSaluto.Text = $"ciao {persona.Nome} {persona.Cognome}";
+        //    //}
+        //    (DataContext as MainWindowsViewModel).Trascrivi();
+        //}
     }
 }

@@ -10,3 +10,13 @@ vito che ogni classe ViewModel (MainWindowsViewModel), di collegamento tra un mo
 che abbia già al suo interno incorporata questa caratteristica e implementi qunto necessario:
 - inseriamo in MainWindowsViewModel.cs la classe **public abstract class BaseViewModel : INotifyPropertyChanged** (prima di MainWindowsViewModel)
 	- questa implementerà l'interfaccia INotifyPropertyChanged
+
+
+
+
+---
+si potevano usare due librerie:
+- https://github.com/Fody/PropertyChanged
+	- inietta (cioè genera) in fase di compilazione del codice, in modo automatico, per la notifica del cambio valore all'interno della nostra proprietà
+- MvvmLight
+	- prevede classi per la gesione delle ViewModel e della Dependency Injection quando vengono considerate più piattaforme

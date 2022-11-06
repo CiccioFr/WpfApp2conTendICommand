@@ -20,7 +20,12 @@
             che a sau volta farà riferimento dei contenitori, fino a risalire al DataContent della Windows 
             SelectedItem="{Binding Path=PersonaSelezionata} lega la selezione di una riga della ComboBox alla Property nella ViewModel-->
 
-                <Button x:Name="ButtonName" Content="Trascrivi" Click="ButtonName_Click" Width="100" Margin="3"/>
+                <!-- Modifichiamo <Button x:Name="ButtonName" Content="Trascrivi" Click="ButtonName_Click" Width="100" Margin="3"/> in..
+                aggiungiamo Command e come valore l'associazione con la Property che a sua volta è legata con l'istanza della classe RelayCommand
+                Nora: si potrebbe evitare di scrivere "Path=" e quindi inserire direttamente {Binding SalutaCommand} 
+                ma usarla semplifica il lavoro con l'IntelliSense -->
+                <Button Command="{Binding Path=SalutaCommand}"> Trascrivi.. </Button>
+                <!-- ora ripuliamo il codice C# nella MainWindows dal metodo ButtonName_Click, il tutto ora è gestito direttamente dalla ViewModel -->
 
             </StackPanel>
         </Border>

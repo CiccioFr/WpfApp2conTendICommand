@@ -165,12 +165,45 @@ namespace WpfApp2conTendICommand.ViewModels
         // Persone (come Property) accede alla lista degli oggetti Persona del service
         public IList<Persona> Persone => _personeService.Persone;
 
-        /// <summary>
-        /// le 2 Property su cui si baserà il Bilding
-        /// devono essere proprio Property, non basta mettere delle variabili standard pubbliche
-        /// </summary>
-        public Persona PersonaSelezionata { get; set; }
-        private string _textSaluto;
+        // per controllare lo stato cliccabile/non alla selezione di qualcosa nella ComboBox
+        // occorre personalizare il setter..
+        // occorre eliminare il meccanismo automatico
+        ///// <summary>
+        ///// le 2 Property su cui si baserà il Bilding
+        ///// devono essere proprio Property, non basta mettere delle variabili standard pubbliche
+        ///// </summary>
+        //public Persona PersonaSelezionata { get; set; }   // riscriviamo il metodo:..
+
+        public Persona _personaSelezionata = null;
+
+        public Persona PersonaSelezionata
+        {
+            get => _personaSelezionata;
+            set
+            {
+                // il controllo evita di riassegnare lo stesso valore
+                // e di fare notifiche di cambio valore
+                // quando la persona selezionata lo era già
+                if (_personaSelezionata == value) return;
+                _personaSelezionata = value;
+
+                // notifichiamo la modifica nel caso questa fosse stata comandata da codice esterno alla View
+                NotifyPropertyChanged();
+
+                // chiediamo ri rivalutare la disponibilità all'essere cliccato del Botton
+                SalutaCommand.RaiseCanExecuteChanged();
+            }
+            // Nota: è assai probabile che il meccanismo di Bilding quando si invia un valore al DataBind
+            // disattivi temporaneamente il meccanismo della notifica
+            // altrimenti si autoalimenterebbe ed entrerebbe in un loop
+            // cioè quando è View stessa a cambiare un valore la chiamata al NotifyPropertyChanged
+            // non ha effetto o cmq il sistema non ne tiene conto
+
+            // ora attiviamo il Binding per il Button -> passiamo al sorgente XAML
+        }
+
+        private string _textSaluto = null;
+
         public string TextSaluto
         {
             get { return _textSaluto; }
