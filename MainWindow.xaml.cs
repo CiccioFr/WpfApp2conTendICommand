@@ -24,6 +24,8 @@ namespace WpfApp2conTendICommand
         // togliamo:
         // private IPersoneService? personeService = null;
         // perchè useremo il DataContext
+        // DataContext è l'oggetto dal quale recuperare i dati che dovranno essere gestiti tramite il controllo stesso
+        // Se un oggetto non ha il DataContext di suo, erediterà quello del suo contenitore
 
         //public MainWindow(IPersoneService personeService)
         public MainWindow(MainWindowsViewModel vm)
